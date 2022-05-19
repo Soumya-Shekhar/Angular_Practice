@@ -28,7 +28,7 @@ export class PractiseFormComponent implements OnInit {
             '',
             [
               Validators.required,
-              Validators.pattern(/^[0-9]{1,19}(?:[.][0-9]{1,4})?$/),
+              Validators.pattern(/^[0-9]{1,4}(?:[.][0-9]{1,8})?$/),
             ],
           ],
           grouping: [
@@ -52,7 +52,7 @@ export class PractiseFormComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.pattern(/^[0-9]{1,19}(?:[.][0-9]{1,4})?$/),
+            Validators.pattern(/^[0-9]{1,4}(?:[.][0-9]{1,8})?$/),
           ],
         ],
         grouping: [
