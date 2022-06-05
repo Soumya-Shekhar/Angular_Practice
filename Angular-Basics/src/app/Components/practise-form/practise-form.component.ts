@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-practise-form',
-  templateUrl: './practise-form.component.html',
-  styleUrls: ['./practise-form.component.css'],
+  selector: "app-practise-form",
+  templateUrl: "./practise-form.component.html",
+  styleUrls: ["./practise-form.component.css"],
 })
 export class PractiseFormComponent implements OnInit {
   public formGrp: FormGroup;
@@ -18,21 +18,21 @@ export class PractiseFormComponent implements OnInit {
       addRowFormArray: this.fb.array([
         this.fb.group({
           fte: [
-            '',
+            "",
             [
               Validators.required,
-              Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$'),
+              Validators.pattern("^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$"),
             ],
           ],
           operator: [
-            '',
+            "",
             [
               Validators.required,
               Validators.pattern(/^[0-9]{1,4}(?:[.][0-9]{1,8})?$/),
             ],
           ],
           grouping: [
-            '',
+            "",
             [Validators.required, Validators.pattern(/^[a-zA-Z0-9%@&#]*$/)],
           ],
         }),
@@ -41,22 +41,22 @@ export class PractiseFormComponent implements OnInit {
   }
 
   get formArry() {
-    return this.formGrp.get('addRowFormArray') as FormArray;
+    return this.formGrp.get("addRowFormArray") as FormArray;
   }
 
   addNew() {
     this.formArry.push(
       this.fb.group({
-        fte: ['', [Validators.required, Validators.pattern('^[A-Za-z0-9 ]+$')]],
+        fte: ["", [Validators.required, Validators.pattern("^[A-Za-z0-9 ]+$")]],
         operator: [
-          '',
+          "",
           [
             Validators.required,
             Validators.pattern(/^[0-9]{1,4}(?:[.][0-9]{1,8})?$/),
           ],
         ],
         grouping: [
-          '',
+          "",
           [Validators.required, Validators.pattern(/^[a-zA-Z0-9%@&#]*$/)],
         ],
       })

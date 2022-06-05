@@ -1,18 +1,22 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { DPCReplicaComponent } from "./Components/dpc-replica/dpc-replica.component";
+import { PasswordGeneratorComponent } from "./Components/password-generator/password-generator.component";
+import { PractiseFormComponent } from "./Components/practise-form/practise-form.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DPCReplicaComponent,
+    PasswordGeneratorComponent,
+    PractiseFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
