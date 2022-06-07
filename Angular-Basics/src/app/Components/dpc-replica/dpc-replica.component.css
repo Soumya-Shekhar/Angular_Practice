@@ -38,9 +38,13 @@ th {
   margin: 1px;
 }
 
-.listWrapper {
+#scroll {
   max-height: 200px;
-  overflow-y: auto;
+  overflow: auto;
+}
+#scroll2 {
+  max-height: 200px;
+  overflow: auto;
 }
 .card-body {
   line-height: 2px;

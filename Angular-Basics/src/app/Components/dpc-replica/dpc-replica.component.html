@@ -47,10 +47,10 @@
                       <!-- <th>{{ listValLen }} selected</th>
                       <th> -->
                     </thead>
-                    <tbody>
+                    <tbody style="border-width: 1px">
                       <tr>
                         <td id="row1">
-                          <div class="listWrapper">
+                          <div id="scroll">
                             <ul
                               class="selectList"
                               *ngFor="let item of selectList"
@@ -68,8 +68,8 @@
                             </ul>
                           </div>
                         </td>
-                        <td>
-                          <div class="listWrapper">
+                        <td style="border-width: 1px">
+                          <div id="scroll2">
                             <ul
                               class="selectList"
                               *ngFor="let item of selectedList"
