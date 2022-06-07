@@ -1,1 +1,113 @@
-<p>dpc-replica works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col" id="col1">
+      <div class="accordion" id="myaccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              <strong> Fields to Display </strong>
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <div class="row">
+                <div class="col" id="col2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    [(ngModel)]="listVal"
+                    id="inp1"
+                  />
+                </div>
+                <div class="col" id="col3">
+                  <input type="text" placeholder="name" id="inp2" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col" id="col4">
+                  <div class="card">
+                    <div class="card-body">
+                      <strong>{{ listValLen }} Selected</strong>
+                    </div>
+                  </div>
+                  <table class="table">
+                    <thead>
+                      <!-- <th>{{ listValLen }} selected</th>
+                      <th> -->
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="row1">
+                          <div class="listWrapper">
+                            <ul
+                              class="selectList"
+                              *ngFor="let item of selectList"
+                            >
+                              <li>
+                                <button
+                                  type="button"
+                                  class="btn btn-primary"
+                                  (click)="add(item)"
+                                >
+                                  <i class="bi bi-telephone-plus"></i>
+                                </button>
+                                {{ item }}
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="listWrapper">
+                            <ul
+                              class="selectList"
+                              *ngFor="let item of selectedList"
+                            >
+                              <li>
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  (click)="remove(item)"
+                                >
+                                  <i class="bi bi-telephone-plus"></i>
+                                </button>
+                                {{ item }}
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <form>
+                    <input type="checkbox" />
+                    <label class="label1"
+                      ><strong>Statistics Mode</strong></label
+                    >
+                    <label class="label2"
+                      ><small
+                        >Search results in the form of a statistics report by
+                        grouping and aggregating field values.</small
+                      >
+                    </label>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
