@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import Scrollbar from "smooth-scrollbar";
 
 @Component({
   selector: "app-dpc-replica",
@@ -6,6 +7,9 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./dpc-replica.component.css"],
 })
 export class DPCReplicaComponent implements OnInit {
+  scrollBarOptions = {
+    alwaysShowTracks: true,
+  };
   listVal: string = "";
   tempValue = "";
   listValLen: number = 0;
@@ -28,7 +32,10 @@ export class DPCReplicaComponent implements OnInit {
   selectedList: string[] = [];
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    Scrollbar.init(document.querySelector("#scroll"), this.scrollBarOptions);
+    Scrollbar.init(document.querySelector("#scroll2"), this.scrollBarOptions);
+  }
 
   add(item: string) {
     if (!this.selectedList.includes(item)) {
