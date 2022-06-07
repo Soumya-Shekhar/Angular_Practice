@@ -1,0 +1,56 @@
+#col1 {
+  margin-top: 50px;
+}
+#col2 {
+  width: 700px;
+}
+#inp1 {
+  width: -webkit-fill-available;
+}
+#inp2 {
+  margin-left: 150px;
+}
+.accordion-item {
+  border-width: 4px;
+  border-color: rgb(134, 93, 210);
+}
+.accordion-header .accordion-button {
+  background-color: white;
+}
+h2 {
+  color: #0d6efd;
+}
+#col4 {
+  margin-top: 10px;
+}
+th {
+  border-width: 1px;
+}
+.box {
+  border-width: 1px;
+  color: red;
+}
+#row1 {
+  width: 500px;
+}
+.selectList {
+  list-style: none;
+  margin: 1px;
+}
+
+.listWrapper {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.card-body {
+  line-height: 2px;
+}
+.btn1 {
+  size: auto;
+}
+.label1 {
+  margin-left: 5px;
+}
+.label2 {
+  margin-left: 10px;
+}
