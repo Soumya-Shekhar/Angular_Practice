@@ -51,7 +51,36 @@
                       <tr>
                         <td id="row1">
                           <div id="scroll">
-                            <ul
+                            <tr *ngFor="let item of categoryList">
+                              <ul class="categoryList">
+                                <li>
+                                  <i
+                                    type="button"
+                                    class="fa fa-plus"
+                                    style="color: rgb(80, 221, 80)"
+                                    (click)="show(item)"
+                                  ></i
+                                  ><strong>{{ item.name }}</strong>
+                                </li>
+                                <li>
+                                  <ul
+                                    class="categoryList"
+                                    [hidden]="item.isChildVisible"
+                                  >
+                                    <li *ngFor="let children of item.children">
+                                      <i
+                                        type="button"
+                                        class="fa fa-plus"
+                                        style="color: rgb(80, 221, 80)"
+                                        (click)="add(children)"
+                                      ></i>
+                                      {{ children }}
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </tr>
+                            <!-- <ul
                               class="selectList"
                               *ngFor="let item of selectList"
                             >
@@ -59,29 +88,26 @@
                                 <button
                                   type="button"
                                   class="btn btn-primary"
-                                  (click)="add(item)"
-                                >
-                                  <i class="bi bi-telephone-plus"></i>
-                                </button>
-                                {{ item }}
+                                  (click)="show(item)"
+                                ></button>
+                                <strong>{{ item }}</strong>
                               </li>
-                            </ul>
+                            </ul> -->
                           </div>
                         </td>
                         <td style="border-width: 1px">
                           <div id="scroll2">
                             <ul
-                              class="selectList"
+                              class="categoryList"
                               *ngFor="let item of selectedList"
                             >
                               <li>
-                                <button
+                                <i
                                   type="button"
-                                  class="btn btn-danger"
+                                  class="fa fa-minus"
+                                  style="color: rgb(242, 57, 57)"
                                   (click)="remove(item)"
-                                >
-                                  <i class="bi bi-telephone-plus"></i>
-                                </button>
+                                ></i>
                                 {{ item }}
                               </li>
                             </ul>
