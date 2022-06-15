@@ -13,6 +13,7 @@
               aria-controls="collapseOne"
             >
               <strong> Fields to Display </strong>
+              <i class="pi pi-info-circle" style="margin-left: 3px"></i>
             </button>
           </h2>
           <div
@@ -23,16 +24,28 @@
           >
             <div class="accordion-body">
               <div class="row">
-                <div class="col" id="col2">
+                <div class="p-input-icon-left" id="col2">
+                  <i class="pi pi-search" style="margin-left: 5px"></i>
                   <input
+                    type="text"
+                    pInputText
+                    [(ngModel)]="listVal"
+                    id="inp1"
+                  />
+                  <!-- <input
                     type="text"
                     class="form-control"
                     [(ngModel)]="listVal"
                     id="inp1"
-                  />
+                  /> -->
                 </div>
-                <div class="col" id="col3">
-                  <input type="text" placeholder="name" id="inp2" />
+                <div id="col3">
+                  <!-- <p-dropdown placeholder="Name"></p-dropdown> -->
+                  <form action="/action_page.php">
+                    <select id="dropdown">
+                      <option value="" disabled selected hidden>Name</option>
+                    </select>
+                  </form>
                 </div>
               </div>
               <div class="row">
@@ -51,13 +64,32 @@
                       <tr>
                         <td id="row1">
                           <div id="scroll">
+                            <tr>
+                              <a href=""
+                                ><strong class="RelationShip"
+                                  >Add New RelationShip</strong
+                                >
+                              </a>
+                            </tr>
                             <tr *ngFor="let item of categoryList">
                               <ul class="categoryList">
-                                <li>
+                                <li *ngIf="item.isChildVisible">
                                   <i
                                     type="button"
                                     class="fa fa-plus"
-                                    style="color: rgb(80, 221, 80)"
+                                    style="
+                                      color: rgb(80, 221, 80);
+                                      margin-right: 15px;
+                                    "
+                                    (click)="show(item)"
+                                  ></i
+                                  >{{ item.name }}
+                                </li>
+                                <li *ngIf="!item.isChildVisible">
+                                  <i
+                                    type="button"
+                                    class="pi pi-angle-up"
+                                    style="margin-right: 15px"
                                     (click)="show(item)"
                                   ></i
                                   ><strong>{{ item.name }}</strong>
@@ -71,7 +103,10 @@
                                       <i
                                         type="button"
                                         class="fa fa-plus"
-                                        style="color: rgb(80, 221, 80)"
+                                        style="
+                                          color: rgb(80, 221, 80);
+                                          margin-right: 15px;
+                                        "
                                         (click)="add(children)"
                                       ></i>
                                       {{ children }}
@@ -97,19 +132,56 @@
                         </td>
                         <td style="border-width: 1px">
                           <div id="scroll2">
-                            <ul
-                              class="categoryList"
-                              *ngFor="let item of selectedList"
-                            >
-                              <li>
+                            <ul class="categoryList">
+                              <li *ngFor="let item of selectedCategoryList">
+                                <div>
+                                  <strong>{{ item.name }}</strong>
+                                </div>
+                                <div *ngFor="let children of item.children">
+                                  <i
+                                    type="button"
+                                    class="fa fa-minus"
+                                    style="
+                                      color: rgb(242, 57, 57);
+                                      margin-right: 15px;
+                                    "
+                                    (click)="remove(children)"
+                                  ></i>
+                                  {{ children }}
+                                </div>
+                              </li>
+                              <!-- <li *ngFor="let items of selectedCategoryList">
+                                {{ items.name }}
+                                <ul
+                                  class="categoryList"
+                                  *ngFor="let item of selectedList"
+                                >
+                                  <li>
+                                    <i
+                                      type="button"
+                                      class="fa fa-minus"
+                                      style="
+                                        color: rgb(242, 57, 57);
+                                        margin-right: 15px;
+                                      "
+                                      (click)="remove(item)"
+                                    ></i>
+                                    {{ item }}
+                                  </li>
+                                </ul>
+                              </li> -->
+                              <!-- <li *ngFor="let item of selectedList">
                                 <i
                                   type="button"
                                   class="fa fa-minus"
-                                  style="color: rgb(242, 57, 57)"
+                                  style="
+                                    color: rgb(242, 57, 57);
+                                    margin-right: 15px;
+                                  "
                                   (click)="remove(item)"
                                 ></i>
                                 {{ item }}
-                              </li>
+                              </li> -->
                             </ul>
                           </div>
                         </td>
