@@ -8,6 +8,7 @@ import { DPCReplicaComponent } from "./Components/dpc-replica/dpc-replica.compon
 import { PasswordGeneratorComponent } from "./Components/password-generator/password-generator.component";
 import { PractiseFormComponent } from "./Components/practise-form/practise-form.component";
 import { DropdownModule } from "primeng/dropdown";
+import { ChipsModule } from "primeng/chips";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DropdownModule } from "primeng/dropdown";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -24,26 +24,21 @@
           >
             <div class="accordion-body">
               <div class="row">
-                <div class="p-input-icon-left" id="col2">
+                <span class="p-input-icon-left" id="col2">
                   <i class="pi pi-search" style="margin-left: 5px"></i>
-                  <input
-                    type="text"
-                    pInputText
-                    [(ngModel)]="listVal"
-                    id="inp1"
-                  />
-                  <!-- <input
-                    type="text"
-                    class="form-control"
-                    [(ngModel)]="listVal"
-                    id="inp1"
-                  /> -->
-                </div>
+
+                  <p-chips [(ngModel)]="displayList" class="chip1"></p-chips>
+                </span>
                 <div id="col3">
-                  <!-- <p-dropdown placeholder="Name"></p-dropdown> -->
                   <form action="/action_page.php">
-                    <select id="dropdown">
+                    <select
+                      style="border: 1.5px solid #999; height: 33px"
+                      id="dropdown"
+                    >
                       <option value="" disabled selected hidden>Name</option>
+                      <option value="">option1</option>
+                      <option value="">option2</option>
+                      <option value="">option3</option>
                     </select>
                   </form>
                 </div>
@@ -56,10 +51,7 @@
                     </div>
                   </div>
                   <table class="table">
-                    <thead>
-                      <!-- <th>{{ listValLen }} selected</th>
-                      <th> -->
-                    </thead>
+                    <thead></thead>
                     <tbody style="border-width: 1px">
                       <tr>
                         <td id="row1">
@@ -115,19 +107,6 @@
                                 </li>
                               </ul>
                             </tr>
-                            <!-- <ul
-                              class="selectList"
-                              *ngFor="let item of selectList"
-                            >
-                              <li>
-                                <button
-                                  type="button"
-                                  class="btn btn-primary"
-                                  (click)="show(item)"
-                                ></button>
-                                <strong>{{ item }}</strong>
-                              </li>
-                            </ul> -->
                           </div>
                         </td>
                         <td style="border-width: 1px">
@@ -150,38 +129,6 @@
                                   {{ children }}
                                 </div>
                               </li>
-                              <!-- <li *ngFor="let items of selectedCategoryList">
-                                {{ items.name }}
-                                <ul
-                                  class="categoryList"
-                                  *ngFor="let item of selectedList"
-                                >
-                                  <li>
-                                    <i
-                                      type="button"
-                                      class="fa fa-minus"
-                                      style="
-                                        color: rgb(242, 57, 57);
-                                        margin-right: 15px;
-                                      "
-                                      (click)="remove(item)"
-                                    ></i>
-                                    {{ item }}
-                                  </li>
-                                </ul>
-                              </li> -->
-                              <!-- <li *ngFor="let item of selectedList">
-                                <i
-                                  type="button"
-                                  class="fa fa-minus"
-                                  style="
-                                    color: rgb(242, 57, 57);
-                                    margin-right: 15px;
-                                  "
-                                  (click)="remove(item)"
-                                ></i>
-                                {{ item }}
-                              </li> -->
                             </ul>
                           </div>
                         </td>

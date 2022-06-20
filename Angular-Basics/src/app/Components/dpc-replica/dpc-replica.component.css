@@ -7,11 +7,6 @@
 #col3 {
   width: 220px;
 }
-#inp1 {
-  margin-top: 3px;
-  width: -webkit-fill-available;
-  padding-left: 2rem;
-}
 .accordion-item {
   border-width: 4px;
   border-color: rgb(134, 93, 210);
@@ -61,11 +56,14 @@ th {
   margin-left: 10px;
 }
 #dropdown {
-  height: 30px;
   width: -webkit-fill-available;
   margin-top: 3px;
 }
 .RelationShip {
   margin-left: 31px;
   margin-bottom: 2px;
+}
+.pi-times::before {
+  position: relative;
+  bottom: 5px;
 }
