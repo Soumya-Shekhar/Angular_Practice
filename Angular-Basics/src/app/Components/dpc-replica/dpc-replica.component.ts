@@ -83,6 +83,7 @@ export class DPCReplicaComponent implements OnInit {
     isChildVisible: boolean;
     children: string[];
   }[];
+  displayList: string[];
 
   constructor() {}
 
@@ -104,18 +105,9 @@ export class DPCReplicaComponent implements OnInit {
   }
 
   listValChanger() {
-    // for (let i = 0; i < this.selectedList.length; i++) {
-    //   if (this.tempValue.length == 0) {
-    //     this.tempValue = this.selectedList[i];
-    //   } else {
-    //     this.tempValue = this.tempValue + "," + this.selectedList[i];
-    //   }
-    // }
-    // this.listVal = this.tempValue;
-    // this.tempValue = "";
-    // return this.listVal;
     let tempArray = [];
     this.selectedCategoryList = [];
+    this.displayList = [];
     for (let i = 0; i < this.categoryList.length; i++) {
       let objMain = JSON.parse(JSON.stringify(this.categoryList[i]));
       for (let j = 0; j < objMain.children.length; j++) {
@@ -136,7 +128,6 @@ export class DPCReplicaComponent implements OnInit {
           }
           if (!tempArray.includes(objMain.name)) {
             tempArray.push(objMain.name);
-            // this.selectedCategoryList.push(objMain);
           }
         }
       }
@@ -148,10 +139,18 @@ export class DPCReplicaComponent implements OnInit {
         this.tempValue = this.tempValue + "," + tempArray[i];
       }
     }
+    for (let i = 0; i < this.selectedCategoryList.length; i++) {
+      this.displayList.push(this.selectedCategoryList[i].name);
+    }
     this.listVal = this.tempValue;
     this.listValLen = tempArray.length;
     this.tempValue = "";
-    return this.listVal && this.listValLen && this.selectedCategoryList;
+    return (
+      this.listVal &&
+      this.listValLen &&
+      this.selectedCategoryList &&
+      this.displayList
+    );
   }
   show(item: { name: string; isChildVisible: boolean; children: string[] }) {
     item.isChildVisible = !item.isChildVisible;

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.chip1 .p-chips {
+  display: unset;
+  width: 100%;
+}
+.chip1 .p-chips .p-chips-multiple-container {
+  padding: 0rem 1.5rem;
+  /* height: 29px; */
+  margin-top: 2px;
+}
+.chip1 .p-chips .p-chips-multiple-container .p-chips-token {
+  margin-top: -1px;
+  padding-top: 0.2px;
+  padding-bottom: 0.2px;
+}
